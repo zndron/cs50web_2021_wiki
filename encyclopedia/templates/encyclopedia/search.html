@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Пошук
+{% endblock %}
+
+{% block body %}
+<h1>Результати пошуку</h1>
+
+    {% if entries %}
+        <div>По запиту '{{ query }}' знайдено:</div>
+        <ul class="nav flex-column">
+            {% for entry in entries %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'encyclopedia:view' entry %}">{{ entry }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div>По запиту '{{ query }}' нічого не знайдено, ви можете створити таку статтю.</div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Енциклопедія
+{% endblock %}
+
+{% block body %}
+    <h1>Список статей</h1>
+
+    <ul class="nav flex-column">
+        {% for entry in entries %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'encyclopedia:view' entry %}">{{ entry }}</a>
+        </li>    
+        {% endfor %}
+    </ul>
+
+{% endblock %}

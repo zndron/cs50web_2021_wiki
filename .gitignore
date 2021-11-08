@@ -1,0 +1,11 @@
+# project files
+.idea
+.vscode
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+__pycache__
